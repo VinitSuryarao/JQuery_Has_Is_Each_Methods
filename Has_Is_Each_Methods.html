@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title> JQuery Test  </title>
+   <style>
+      #divA{
+         background-color: palegreen;
+         position: relative;
+         border: 1px solid black;
+      }
+   </style>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type = "text/javascript">
+
+		    // ready func call when document is ready to render
+         $(document).ready(function() 
+         {     
+               // has()
+               $('#btnHas').click(function(){
+                  $('p').has('b').css('color','red');
+                  $('p').has('i').css('color','blue');
+               });
+               // is()
+               $('#btnIs').click(function(){
+                  
+                  if($('#divA').children().is('.classDivA'))
+                  {
+                     alert("Class Condition Present");
+                  }
+                  
+               });
+               // each()
+               $('#btneach').click(function(){
+                  $('p').each(function(){
+                     console.log($(this).text());
+                  });
+               });
+               
+         });
+     </script>
+<head>
+   <body>
+   <div id="divA">
+      <p> This is <b>First</b> Line of Div A</p>
+      <p class="classDivA"> This is <i>Second</i> Line of Div A</p>
+      <p> This is Third Line of Div A</p>
+   </div>
+   <button id="btnHas"> Has </button> 
+   <button id="btnIs"> Is </button> 
+   <button id="btneach"> Each </button> 
+</body>
+</html>
